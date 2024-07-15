@@ -1,84 +1,70 @@
-# ng-ws-ui
+# NgWsVideoPlayer
 
-![Angular 17](https://img.shields.io/badge/Angular%2017-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+This Video Player is a customizable video player component for Angular 17 applications. It provides a rich set of features and controls for playback, including timeline scrubbing, volume control, playback speed adjustment, and more.
 
-A collection of reusable Angular UI components and libraries.
+## Features
 
-## Table of Contents
+- Playback speed adjustment
+- Full-screen mode 
+- Theater mode
+- Mini-player mode
+- Captions support
+- Keyboard shortcuts for various controls
+- Customization
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Development](#development)
-  - [Creating a New Library](#creating-a-new-library)
-  - [Building Libraries](#building-libraries)
-  - [Publishing Libraries](#publishing-libraries)
+## Keyboard Shortcuts 
 
-## Installation
-
-To install the entire `ng-ws-ui` package:
-
-```bash
-npm install ng-ws-ui
-```
-
-Or, to install individual libraries:
-```bash
-npm install ng-ws-video-player
-```
+- Space / K - Play/Pause
+- F - Toggle full-screen mode
+- T - Toggle theater mode
+- I - Toggle mini-player mode
+- M - Toggle mute
+- Left Arrow / J - Seek backward (5 seconds)
+- Right Arrow / L - Seek forward (5 seconds)
+- C - Toggle captions
 
 ## Usage
 
-Import the desired component in your standalone component or app.component.ts:
-
-```typescript
-import { Component } from '@angular/core';
-import { NgWsVideoPlayerComponent } from 'ng-ws-video-player';
-
-@Component({
-selector: 'app-root',
-standalone: true,
-imports: [NgWsVideoPlayerComponent],
-template: `<ng-ws-video-player/>`
-})
-export class AppComponent {}
+```angular17html
+<ng-ws-video-player
+    [videoSrc]="'path/to/your/video.mp4'"
+    [captionSrc]="'path/to/your/captions.vtt'"
+    [captionLangLabel]="'English'"
+    [captionSrcLang]="'en'"
+    [videoPlayerClassesToAdd]="'class1 class2 class3'"
+    [videoContainerClassesToAdd]="'class1 class2 class3'"
+    [videoAccentColor]="'#ff0000'"
+/>
 ```
+## Inputs
 
-## Development
+The component accepts the following inputs:
 
-### Creating a New Library
-1. Navigate to the project root:
+| Input | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| `videoSrc` | string | Yes | '' | Path to the video file |
+| `captionSrc` | string | No | '' | Path to the captions file |
+| `captionLangLabel` | string | No | 'English' | Label for the caption language |
+| `captionSrcLang` | string | No | 'en' | Source language code for captions |
+| `videoPlayerClassesToAdd` | string | No | '' | Additional classes to add to the video player element |
+| `videoContainerClassesToAdd` | string | No | '' | Additional classes to add to the video container |
+| `videoAccentColor` | string | No | '' | Accent color for the video player controls |
+
+## Customization
+You can customize the appearance of the video player by modifying the provided SCSS file or overriding the CSS classes in your application.
+Dependencies
+This component is designed for Angular and uses Angular's built-in features. Make sure you have Angular installed in your project.
+
+## Installation
+
+1. Install the component in your Angular project:
+
 ```bash
-cd ng-ws-ui
+npm i ng-ws-video-player
 ```
 
-2. Generate a new library:
+2. Install the whole library, and it will come with it:
+
 ```bash
-ng generate library <new-component-library-name>
+npm i ng-ws-ui
 ```
-### Building Libraries
-To build a specific library:
-```bash
-ng build my-new-library
-```
-
-### Publishing Libraries
-To publish individual libraries:
-
-1. Navigate to the library directory:
-```bash
-cd projects/<new-component-library-name>
-```
-
-2. Publish to npm:
-```bash
-npm publish
-```
-
-### To publish the entire ng-ws-ui package:
-
-1. Create a new library called `full-lib` that includes all component libraries as `PeerDependencies`.
-2. Build the `full-lib`.
-3. Navigate to `dist/full-lib`.
-4. Publish it to npm.
