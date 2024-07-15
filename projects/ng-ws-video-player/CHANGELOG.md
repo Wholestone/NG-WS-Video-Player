@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Wholestone/NG-WS-Video-Player/compare/v1.0.0...v1.1.0) (2024-07-15)
+
+
+### Features
+
+* **Video Player:** Bumping version to start from blank page. ([e5f5e78](https://github.com/Wholestone/NG-WS-Video-Player/commit/e5f5e781db44c001848fd1b4850a4e6d9b0b0e44))
+
 # 1.0.0 (2024-07-15)
 
 
