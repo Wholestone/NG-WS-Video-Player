@@ -12,7 +12,7 @@ This Video Player is a customizable video player component for Angular 17 applic
 - Keyboard shortcuts for various controls
 - Customization
 
-## Keyboard Shortcuts
+## Keyboard Shortcuts 
 
 - Space / K - Play/Pause
 - F - Toggle full-screen mode
