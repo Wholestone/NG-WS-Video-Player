@@ -1,0 +1,43 @@
+name: Releasing ng-ws-video-player
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Releasing ng-ws-video-player
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+
+      - name: Installing root dependencies
+        run: npm i
+
+      - name: Installing component dependencies
+        run: npm i
+        working-directory: projects/ng-ws-video-player
+
+      - name: Building component-package
+        run: npm run build
+        working-directory: projects/ng-ws-video-player
+
+      - name: Releasing
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+        working-directory: projects/ng-ws-video-player

@@ -1,0 +1,36 @@
+{
+  "name": "ng-ws-video-player",
+  "version": "1.0.0",
+  "author": "WholeStone",
+  "description": "A customizable video player component for Angular 17 applications.",
+  "repository": {
+    "url": "https://github.com/Wholestone/NG-WS-Video-Player",
+    "type": "git"
+  },
+  "keywords": [
+    "angular",
+    "angular-17",
+    "video-player",
+    "angular-video-player",
+    "angular-17-video-player"
+  ],
+  "engines": {
+    "node": ">=20.15.0"
+  },
+  "scripts": {
+    "build": "ng build ng-ws-video-player"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^17.3.4",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1"
+  },
+  "sideEffects": false
+}
